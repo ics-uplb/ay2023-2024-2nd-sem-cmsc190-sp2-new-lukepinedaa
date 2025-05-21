@@ -1,8 +1,7 @@
-# My Special Problem: An example of CMSC 190 GitHub Repository
-Authors: Juan D. Cruz and Adviser' S. Name
+# My Special Problem: Web-based Employee Information System for Hana-net Philippines Co. Inc. Trucking Company
+Authors: Luke Adrian D. Pineda and Rizza DC. Mercado
 
-This is the abstract of my special problem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue, diam molestie pellentesque feugiat, lorem libero vehicula lorem, eget accumsan magna mi non sem. Aliquam erat volutpat. Aliquam scelerisque sagittis mi sed consequat. Ut vestibulum ullamcorper fermentum. Vivamus eu efficitur nunc, quis tempus libero. Aliquam condimentum posuere sem, vitae auctor purus tempus quis. Aenean laoreet nulla pretium mauris faucibus gravida. Nunc interdum, tortor at tempus egestas, velit eros bibendum dui, a malesuada mi lectus ut ante. Praesent ac turpis gravida, tincidunt tellus vitae, volutpat tortor.
+This study addresses the challenges faced by Hana-net Philippines Co. Inc., a trucking company based in Biñan, Laguna, transitioning from traditional human resource management methods to a modern, web-based information system. The company, with 78 employees servicing 7 partners, has relied on pen-and-paper records and Excel spreadsheets for HR functions since 1999, which is prone to data insecurity and inefficiencies. This research details the development of a web-based employee information system using the MERN stack (MongoDB, Express.js, React.js, Node.js) to centralize employee data management, streamline payroll processing, automate leave applications, and enhance overall HR operations. System evaluation using Brooke's System Usability Scale (SUS) with ten company employees resulted in a mean score of 76.75, indicating good usability. User feedback highlighted areas for frontend interface improvements while confirming the system's effectiveness in addressing the limitations of manual processes. The successful implementation demonstrates how small businesses in the logistics industry like Hana-net can benefit from tailored information systems.
 
-Keywords: template, submission, repository, example
+Keywords: Human Resource Management System, Web-based Information System, MERN Stack, System Usability Scale
 
-Read [How To Document](HOWTO.md) for more details.
