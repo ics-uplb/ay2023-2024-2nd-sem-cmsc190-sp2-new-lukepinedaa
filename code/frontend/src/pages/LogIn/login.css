@@ -1,0 +1,200 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-container {
+  width: 350px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(57, 62, 70, 0.1);
+}
+
+.company-name {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #393e46;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #393e46;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.forgotten-password {
+  display: block;
+  text-align: right;
+  margin-bottom: 20px;
+  color: #929aab;
+  text-decoration: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.signin-button {
+  background-color: #393e46 !important;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.signin-button:hover {
+  background-color: #2e3239 !important;
+}
+
+.sign-up-button {
+  background-color: #ffffff !important;
+  border: 1px solid #929aab !important;
+  color: #929aab !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sign-up-button:hover {
+  background-color: #eeeeee !important;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 0.8rem;
+  margin: 5px 0 15px;
+  text-align: left;
+  width: 100%;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(57, 62, 70, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #929aab;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #393e46;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+  color: #393e46;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.modal-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-button-container button {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  min-width: 100px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-button-container button[type="submit"] {
+  background-color: #393e46 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.modal-button-container button[type="submit"]:hover {
+  background-color: #2e3239 !important;
+}
+
+.modal-button-container button[type="button"] {
+  background-color: #ffffff !important;
+  color: #929aab !important;
+  border: 1px solid #929aab !important;
+}
+
+.modal-button-container button[type="button"]:hover {
+  background-color: #eeeeee !important;
+  color: #393e46 !important;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.company-logo {
+  height: 50px;
+}

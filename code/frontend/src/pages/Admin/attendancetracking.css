@@ -1,0 +1,311 @@
+.attendance-tracking-container {
+    max-width: 1200px;
+    margin: 80px auto 20px;
+    padding: 20px;
+    background-color: #ffffff !important;
+    border-radius: 8px ;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .attendance-tracking-container h2 {
+    margin-bottom: 20px ;
+    color: #393e46 !important;
+  }
+  
+  .month-selector {
+    display: flex ;
+    justify-content: flex-start ;
+    align-items: center ;
+    margin-bottom: 20px ;
+    gap: 20px ;
+  }
+  
+  .selector-group {
+    display: flex ;
+    align-items: center ;
+    gap: 10px ;
+  }
+  
+  .selector-group label {
+    font-weight: 500 ;
+    color: #393e46 !important;
+  }
+  
+  .month-select,
+  .year-select {
+    padding: 8px ;
+    border: 1px solid #ddd ;
+    border-radius: 4px ;
+    font-size: 14px ;
+    background-color: white !important;
+  }
+  
+  .loading {
+    text-align: center ;
+    font-size: 18px ;
+    margin: 30px 0 ;
+    color: #393e46 !important;
+  }
+  
+  .employee-list {
+    margin-top: 20px !important;
+    background-color: #f7f7f7 !important;
+    padding: 15px !important;
+    border-radius: 8px !important;
+    display: flex !important; 
+    flex-wrap: wrap !important; 
+    gap: 10px !important; 
+  }
+  
+  .employee-list h3 {
+    margin-bottom: 15px ;
+    color: #393e46 !important;
+  }
+  
+  .employee-button {
+    padding: 15px !important;
+    background-color: #f7f7f7 !important;
+    border: 1px solid #929aab !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    text-align: left !important;
+    font-size: 15px !important;
+    color: #393e46 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: auto !important; 
+    flex-basis: calc(25% - 10px) !important; 
+    margin-bottom: 0 !important; 
+    min-width: 200px !important; 
+    max-width: 300px !important; 
+  }
+  
+  .employee-button:hover {
+    background-color: #eeeeee !important;
+    transform: translateY(-2px) ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) ;
+  }
+  
+  .employee-info {
+    font-weight: 500 ;
+  }
+  
+  .monthly-report-section {
+    margin-top: 30px ;
+    text-align: right   ;
+  }
+  
+  .generate-monthly-button {
+    padding: 12px 20px !important;
+    background-color: #393e46 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    transition: background-color 0.3s !important;
+  }
+  
+  .generate-monthly-button:hover {
+    background-color: #2e3239 !important;
+  }
+  
+  .modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 300 !important;
+  }
+  
+  .attendance-modal {
+    background-color: white !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    width: 800px !important;
+    max-width: 90% !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    position: relative !important;
+  }
+  
+  .close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    color: #393e46 !important;
+  }
+  
+  .close:hover {
+    color: #d9534f !important;
+  }
+  
+  .attendance-details {
+    margin-top: 20px !important;
+  }
+  
+  .attendance-summary {
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  
+  .summary-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    margin-top: 10px !important;
+  }
+  
+  .stat-item {
+    background-color: #f7f7f7 !important;
+    padding: 10px 15px !important;
+    border-radius: 6px !important;
+    min-width: 120px !important;
+  }
+  
+  .stat-label {
+    display: block !important;
+    font-size: 12px !important;
+    color: #666 !important;
+  }
+  
+  .stat-value {
+    display: block !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #393e46 !important;
+  }
+  
+  .attendance-records {
+    margin-bottom: 20px !important;
+  }
+  
+  .records-table {
+    border: 1px solid #eee !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    margin-top: 10px !important;
+  }
+  
+  .table-header {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    background-color: #f5f5f5 !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid #ddd !important;
+  }
+  
+  .header-cell {
+    padding: 12px !important;
+    text-align: left !important;
+  }
+  
+  .table-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  
+  .table-row:last-child {
+    border-bottom: none !important;
+  }
+  
+  .row-cell {
+    padding: 12px !important;
+    text-align: left !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .status-badge {
+    padding: 4px 8px !important;
+    border-radius: 12px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+  
+  .status-badge.present {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+  }
+  
+  .status-badge.absent {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+  }
+  
+  .status-badge.late {
+    background-color: #fff3cd !important;
+    color: #856404 !important;
+  }
+  
+  .status-badge.half-day {
+    background-color: #d1ecf1 !important;
+    color: #0c5460 !important;
+  }
+  
+  .attendance-actions {
+    margin-top: 20px !important;
+    text-align: right !important;
+  }
+  
+  .pdf-button {
+    padding: 10px 15px !important;
+    background-color: #393e46 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    transition: background-color 0.3s !important;
+  }
+  
+  .pdf-button:hover {
+    background-color: #2e3239 !important;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+  }
+  
+  .company-logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .month-selector {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+    
+    .summary-stats {
+      flex-direction: column !important;
+    }
+    
+    .table-header,
+    .table-row {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .header-cell:nth-child(3),
+    .header-cell:nth-child(4),
+    .row-cell:nth-child(3),
+    .row-cell:nth-child(4) {
+      margin-top: 8px !important;
+      border-top: 1px dashed #eee !important;
+    }
+  }

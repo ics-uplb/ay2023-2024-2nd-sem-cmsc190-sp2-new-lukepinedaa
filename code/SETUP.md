@@ -1,19 +1,41 @@
 # Development Set-up
 ## Prerequisites
-* interpreter
-* package manager 1
-* test files (file1, file2)
-* Android phone
-* IDE used, etc
+* Node.js 
+* MongoDB
+* Git
+* IDE (Visual Studio Code)
+* Web Browser 
 ## Instructions
-1. Install `interpeter` from link
-2. Run the following command to install other packages:
+1. Clone the Repository from link
 ```
-interpreter install package_manager
-package_manager -i packages
+	- git clone "git-link"
+	- cd repo
 ```
-3. Run the following command to use the program:
+2. Set Up the Backend (Node.js + Express + MongoDB):
 ```
-myprogram file1 file2
+cd backend
+npm install
 ```
-4. A binary file can also be downloaded from this link which can be used by any device.
+Create a .env file in the backend folder with the following contents:
+```
+MONGO_URI = your mongo uri
+EMAIL_USER = your email for auth
+EMAIL_PASS = your pass for auth
+```
+Run the backend server:
+```
+node index.js
+```
+3. Set Up the Frontend (React):
+```
+cd ../frontent
+npm install
+```
+Start the frontend server:
+```
+npm start
+```
+4. Access the Application
+```
+localhost:3000
+```
