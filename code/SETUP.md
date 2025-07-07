@@ -19,8 +19,8 @@ npm install
 Create a .env file in the backend folder with the following contents:
 ```
 MONGO_URI = your mongo uri
-EMAIL_USER = your email for auth
-EMAIL_PASS = your pass for auth
+EMAIL_USER = your email address for auth
+EMAIL_PASS = your password for auth
 ```
 Run the backend server:
 ```
@@ -28,7 +28,7 @@ node index.js
 ```
 3. Set Up the Frontend (React):
 ```
-cd ../frontent
+cd ../frontend
 npm install
 ```
 Start the frontend server:
