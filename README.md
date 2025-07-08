@@ -1,3 +1,5 @@
+Checked by RDCMercado on July 8, 2025
+
 # Web-based Employee Information System for Hana-net Philippines Co. Inc. Trucking Company
 Authors: Luke Adrian D. Pineda and Rizza DC. Mercado
 
