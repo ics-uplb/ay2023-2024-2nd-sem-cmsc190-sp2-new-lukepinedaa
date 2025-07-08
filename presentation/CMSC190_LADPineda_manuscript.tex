@@ -1,0 +1,504 @@
+%Sample for icsthesis.cls
+%Author: JCEPlaras
+%Reminders: Omit \lipsum commands
+
+\documentclass{icsthesis}
+\usepackage{lipsum} %for generating dummy text
+\usepackage{dblfloatfix}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage{longtable}
+
+%\usepackage{showframe} %for debugging the margins
+                              
+                              
+%Replace the values here, various commands depend on this variables                                                                                                                                                            
+\renewcommand{\TITLE}{WEB-BASED EMPLOYEE INFORMATION SYSTEM FOR HANA-NET PHILIPPINES CO. INC. TRUCKING COMPANY}
+\renewcommand{\AUTHOR}{LUKE ADRIAN PINEDA}
+\renewcommand{\DEGREE}{BACHELOR OF SCIENCE}
+\renewcommand{\MAJOR}{COMPUTER SCIENCE}
+\renewcommand{\MONTH}{JUNE}
+\renewcommand{\YEAR}{2025}
+
+\begin{document}
+	
+	\begin{frontmatter}
+		%create title
+		\maketitle
+				
+		\begin{approvalpage}
+
+\vspace*{2cm}
+
+\begin{center}
+    The special problem hereto attached entitled\\
+    \textbf{\TITLE},\\
+    prepared and submitted by \textbf{\AUTHOR},\\[1em]
+    in partial fulfillment of the requirements for the degree of\\
+    \textbf{\DEGREE\ (\MAJOR)}\\[2em]
+    
+    is hereby accepted.\\[3em]
+
+    Accepted in partial fulfillment of the requirements for the degree of\\
+    \textbf{\DEGREE\ (\MAJOR)}\\[6em]
+\end{center}
+
+\addsignature{ASST. PROF. RIZZA DC. MERCADO}{Adviser}
+\vspace{2cm}
+\addsignature{DR. MARIA ART ANTONETTE D. CLARIÑO}{Director, Institute of Computer Science\\University of the Philippines Los Ba\~{n}os}
+
+\vfill
+
+\end{approvalpage}
+
+	
+		
+		%acknowledgement
+		\begin{acknowledgement}
+			I would like to express my sincere gratitude to my adviser, \textbf{Asst. Prof. Rizza D.C. Mercado}, for her invaluable guidance, unwavering support, and dedication throughout the course of this study, especially during consultations and presentations.
+
+            I would like to extend my thanks to \textbf{Ian Lopo Servancia}, \textbf{Xya May Zepeda}, and\textbf{ Hana-net Philippines Co. Inc}. for giving me the opportunity to work with them on this Special Problem.
+
+            I would also like to thank the \textbf{Makiling Ultimate Club} and the Ultimate Frisbee community for providing a healthy outlet and much-needed balance throughout my academic journey.
+
+Lastly, I would like to thank my family for their unwavering support all throughout this endeavor.
+		\end{acknowledgement}
+		
+		%TOC
+		\maketableofcontents
+		
+		%LOT
+		\makelistoftables
+
+		%LOF
+		\makelistoffigures
+	
+		%ABSTRACT
+		
+		\begin{abstractwithpageno}	
+\justifying
+\setlength{\parindent}{2em}
+This study addresses the challenges faced by Hana-net Philippines Co. Inc., a trucking company based in Biñan, Laguna, transitioning from traditional human resource management methods to a modern, web-based information system. The company, with 78 employees servicing 7 partners, has relied on pen-and-paper records and Excel spreadsheets for HR functions since 1999, which is prone to data insecurity and inefficiencies. This research details the development of a web-based employee information system using the MERN stack (MongoDB, Express.js, React.js, Node.js) to centralize employee data management, streamline payroll processing, automate leave applications, and enhance overall HR operations. System evaluation using Brooke's System Usability Scale (SUS) with ten company employees resulted in a mean score of 76.75, indicating good usability. User feedback highlighted areas for frontend interface improvements while confirming the system's effectiveness in addressing the limitations of manual processes. The successful implementation demonstrates how small businesses in the logistics industry like Hana-net can benefit from tailored information systems.
+\end{abstractwithpageno}
+
+
+	\end{frontmatter}
+	
+	%BODY OF THESIS HERE (Use up to 3 levels only, (sec -> subsec -> subsubsec)
+	\begin{mainmatter}
+		\section{INTRODUCTION}
+			\subsection{\textbf{Background of the Study}}
+Hana-net Philippines Co. Inc. is a trucking company based in Timbao, Biñan City, Laguna. The company, founded on September 24, 1999, has built a strong reputation for its reliable and efficient services. With a team of 78 employees, the company continues to provide its services to a diverse clientele of 7 partners. Over the years, Hana-net has demonstrated a commitment to excellence in the logistics industry, ensuring the satisfaction of its clients.
+
+	Since its inception, the company has used traditional means in data keeping and human resource functions such as payroll management, filing for leave, management of employees’ personal information, etc. such as pen-and-paper and Excel spreadsheets. These methods are certainly functional, however, they come with limitations/and or disadvantages. Firstly, manual entry and management of employee records are prone to risk due to human error. Secondly, the non-existence of a centralized information system such as an online database makes consistency of information difficult. Lastly, the lack of secure and easily accessible data may be prone to tampered and compromised data. 
+
+Recognizing the challenges posed by traditional means, this study aims to develop a web-based information system that will serve as a comprehensive solution to make specific human resource management functions, including but not limited to payroll management, leave applications and management of personnel information. The advantages of an IS directly address the limitations associated with manual processes. Unlike the error-prone manual entry of employee records, an IS ensures data accuracy. Additionally, it provides a centralized platform for managing various HR functions, enhancing transparency, and improving the overall employee experience. Automation features contribute to increased productivity, reducing the likelihood of errors and speeding up HR processes. By implementing this system, improvement of internal processes and overall efficiency are made possible.
+
+
+\subsection{\textbf{Statement of the Problem}}
+The current data-keeping system of the company heavily relies on conventional methods, including pen-and-paper records and Excel spreadsheets. While these methods are functional, they present limitations and/or disadvantages such as the risk of human error, inconsistency, and security.
+
+
+\subsection{\textbf{Significance of the Study}}
+This study aims to help Hana-net Trucking Company organize and systematize their employees' information in a web-based application to address the current disadvantages of traditional data-keeping methods. 
+
+
+\subsection{\textbf{Objectives of the Study}}
+The general objective of this study is to design and implement a web-based application focused on organizing and systemizing employee information and human resources management, specifically made for Hana-net Philippines Co. Inc. Trucking Company.
+
+Specifically, this project intends to:
+\begin{enumerate}
+    \item Develop a system for admins to organize, update, and manage employee information through a centralized database;
+    \item Implement features for admins to perform HR functions, focusing on attendance tracking and approving leave requests.
+    \item Enable employees to update their personal information, review their monthly salary details and file leave applications;
+    \item Conduct usability test to assess ease of use, navigation, and overall user experience of the web-application.
+\end{enumerate}
+
+
+\subsection{\textbf{Scopes and Limitations of the Study}}
+The focus of this study is to provide an application that allows Hana-net to manage their employees’ information. The application is intended to be used by Hana-net management and their employees. The administrator has full access to the web-based application while the employees will have limited access to certain functionalities. 
+
+The application is web-based and will only be accessible using devices with web browsers and access to an internet connection, including smartphones and computers. The application does not support offline services.
+
+		
+		\section{REVIEW OF LITERATURE}
+			Human Resources (HR) is one of the key aspects of a successful business organization. Managing employees as assets instead of resources (Zeebaree et al., 2019). With the goal of upscaling in mind, the number of employees will increase, making the already difficult task of managing employees even more gruesome. Thus, it is of utmost importance to manage human resources in an efficient and orderly manner (Zeebaree et al., 2019).   
+
+
+\subsection{\textbf{Information Systems in Human Resources Management}}
+
+Information Systems (IS) have been instrumental in effectively managing business organizations. Since their inception in the 1950s, optimizing business transaction processing functions to today’s cloud-based system, IS has been indispensable in supporting various business functions including Human Resources Management (HRM), which happens to be one of the last business functions to fully implement the use of IS. The implementation of IS in HRM mainly focused on automating payroll and data-intensive tasks like keeping track of employees’ information (Johnson et al., 2016).
+
+In a study entitled “FGEHF: Authenticated Web-Based Application for Human Resource Management System”, Ali et al. (2018) discuss the challenges faced by Human Resources Management (HRM) systems due to their reliance on manual processes in handling employees’ information, salary computation, leave application, etc. Relying on manual processes is not only time-consuming but is also prone to human error. To address the aforementioned challenges of manual processes of HRM, Ali et al. (2018) proposed an authenticated web-based application for a human resource management system. Their proposed system addresses the difficulties faced by their client Federal Government Employee Housing Foundation (FGEHF), which has been operating manually since 1988. The solution seeks to streamline HRM processes, making managing efficient and effective. Additionally, it is expected to result in time and cost savings and error-free and secured data. The system ensures that users and their records are securely stored on database servers which can only be accessed by those with authorization. 
+
+
+\subsection{\textbf{Information Systems in Small Businesses}
+}
+In a journal article entitled “An Integrated Model of Information Systems Adoption in Small Businesses”, authored by Thong (1999), an integrated model of Information System (IS) adoption in small businesses was developed and tested based on theories from technological innovation literature. The study used CEO, IS, and organizational characteristics as primary determinants of IS adoption among small businesses. CEOs who are tech-savvy and have knowledge of IS and those with a positive insight into the advantages of IS are most likely to adopt IS. Information intensity and competition are external factors that could affect the adoption of IS by influencing their perceived characteristics, specifically business size and employees’ IS knowledge. The findings of said study found that CEOs play a significant role in the adoption of IS as they control the allocation of resources and weigh the benefits of IS. For businesses to adopt IS, it must have the following characteristics, it must show clear advantages over manual processes, be compatible with specific businesses, and it must be user-friendly. Business-size and tech-savvy employees are part of the organizational characteristics that could impact the adoption of IS. Businesses with a greater number of employees have more resources, while tech-savvy employees lower the learning barrier of the use of IS.
+
+\subsection{\textbf{Web-based Information Systems and Traditional Information Systems}}
+
+The study by Baskerville and Pries-Heje (2001) provides valuable insights into the challenges and strategies associated with Web-based Information Systems (IS) development as opposed to traditional IS development. Their research identified ten key concepts relevant to IS development using grounded theories, that are particularly relevant to IS development for the Internet. Causal chains, primarily driven by "time pressure" and "vague requirements" link the concepts. Baskerville and Pries-Heje (2001) explore how these concepts, such as "prototyping," "release orientation," "parallel development," and "coding your way out," were effectively applied in the Global Drinks Service (GDS) project, which operated on "Internet time" and faced the challenge of dealing with undefined project requirements. Notably, the study highlights the role of methodology in the context of IS development, emphasizing that methodology is not a static, predefined structure but rather an evolving and contingent process. It suggests that methodology is a product of the interactions between human actors, IS methods, and the problem situation, with multiple interpretations and meanings. This perspective highlights the importance of incorporating theories of sociotechnical elements in understanding IS methodologies. The study further indicates that as Internet projects expand in scope, they converge with traditional IS projects, blurring the distinctions between them. Thus, methodology in IS development is viewed as dynamic and evolving, shaped by the practices of those involved. This approach challenges the traditional notion of methodology as a fixed structure and highlights the need for a socio-technical perspective. The Multiview framework applied in this research provides valuable insight for understanding the Web IS Development Methodology (WISDM) within the context of e-commerce projects like the GDS. It acknowledges the evolving nature of methodology as a dynamic practice, emphasizing the roles of human agency and technology in IS development methodologies. 
+
+
+				
+				
+		
+		\section{METHODOLOGY}
+			\subsection{\textbf{System Requirements}}
+The application developed is a web application that is accessible using devices with web browsers that are compatible with JavaScript and access to an internet connection, including smartphones and computers. The application does not support offline services. For window users, operating system must at least be Windows 10 and an Intel Pentium 4 processor or later. For android users, at least Android 8.0 is required to run the system.  
+\subsection{\textbf{Development Tools}}
+The programming framework used was MERN stack. MERN stack is a JavaScript stack used for the deployment of web applications. MongoDB Atlas, a NoSQL database, was used as database solution. ExpressJS along with NodeJS which served as the back-end segment of the application. For the front-end segment, ReactJS was utilized.
+For testing purposes, the application was deployed through Vercel, utilizing MongoDB Atlas and Render as the cloud-based database.
+
+\subsection{\textbf{User Types}}
+The application to be developed will be mainly used by Hana-net admin and employees. Table~\ref{tab:admin-usecase} and Table~\ref{tab:employee-usecase} show what functionalities users can access and use in the application.  
+	
+	Admin-Side Functionalities:
+    \begin{itemize}
+        \item View All Employees - Admins can access the complete list of all employees within the organization
+    \begin{itemize}
+        \item View Employee Information - Admins can view detailed information of an individual employee
+    \begin{itemize}
+        \item Edit Employment Date of an Employee - Admins can edit the employment date of an individual employee
+        \item Approve Edit Requests from an Employee - Admins can approve information edit requests made by an employee
+    \end{itemize}
+    \item Remove/Delete an Employee - Admins can remove or delete employee records from the system
+    \end{itemize}
+    \item View Job Positons - Admins can access the complete list of all existing job positions
+    \begin{itemize}
+        \item Create Job Positions - Admins can create different job positions with an assigned initial salary
+        \item Modify Position Name and Initial Salary - Admins can modify the position name and initial salary of an existing job position    
+        \item View Employees Under a Job Position - Admins can view existing employees under a job position
+        \item Delete Job Positions - Admins can delete existing job positions 
+    \end{itemize}
+    \item Salary Management - Admins can view and access the complete details of salary of every employee
+    \begin{itemize}
+        \item Deduct Salary and/or Add Bonus - Admins can adjust employee salaries by deducting or adding as necessary
+        \item View Salary - Admins can view any employee's salary for the month
+        \item View Salary History - Admins can view any employee's salary history
+        \item Generate Payslip - Admins can generate a PDF file copy of the salary of any employee
+    \end{itemize}
+    \item Leave Management - Admins can view and approve/reject leave applications made by the employees
+    \item Attendance Tracking - Admins can view all employees' attendance history
+    \begin{itemize}
+        \item Generate Attendance Report - Admins can generate a PDF file containing all employees' attendance report for the current month
+    \end{itemize}
+\renewcommand{\arraystretch}{1.3} % optional for spacing
+\begin{longtable}{|p{0.25\textwidth}|p{0.65\textwidth}|}
+\caption{Admin - Use Case Table} \label{tab:admin-usecase} \\
+\hline
+\textbf{Use Case Name} & \textbf{Description} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Use Case Name} & \textbf{Description} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+View All Employees & Admin accesses the complete list of all employees within the organization. \\
+\hline
+View Employee Information & Admin accesses detailed information of an individual employee. \\
+\hline
+Edit Employment Date & Admin modifies the employment date of an individual employee. \\
+\hline
+Approve Edit Requests & Admin reviews and approves/rejects information edit requests made by employees. \\
+\hline
+Remove/Delete Employee & Admin removes an employee record from the system. \\
+\hline
+View Job Positions & Admin accesses the complete list of all existing job positions. \\
+\hline
+Create Job Position & Admin creates a new job position with specified initial salary. \\
+\hline
+Modify Position & Admin modifies the name and/or initial salary of an existing job position. \\
+\hline
+View Employees by Position & Admin views a list of employees assigned to a specific job position. \\
+\hline
+Delete Job Position & Admin removes an existing job position from the system. \\
+\hline
+Manage Employee Salaries & Admin accesses salary details of all employees. \\
+\hline
+Adjust Employee Salary & Admin deducts from or adds bonus to an employee's salary. \\
+\hline
+View Monthly Salary & Admin views an employee's salary for the current month. \\
+\hline
+View Salary History & Admin views an employee's complete salary history. \\
+\hline
+Generate Payslip & Admin generates a PDF payslip for an employee. \\
+\hline
+Manage Leave Applications & Admin reviews and approves/rejects leave applications. \\
+\hline
+Track Attendance & Admin views attendance records of all employees. \\
+\hline
+Generate Attendance Report & Admin generates a PDF attendance report for all employees. \\
+\end{longtable}
+
+
+    
+\end{itemize}
+Employee-Side Functionalities
+\begin{itemize}
+    \item View Own Information - Employees can access and view their own essential information in the database through the web-application
+    \begin{itemize}
+        \item Update Own Information - Employees can input and update their own information with an admin’s approval
+    \end{itemize}
+    \item View Salary Computation - Employees can review details of their salary computation
+    \begin{itemize}
+        \item Generate Payslip - Employees can generate a PDF file of their payslip
+    \end{itemize}
+    \item View Salary History - Employees can view their salary history
+    \begin{itemize}
+        \item Generate Payslip - Employees can generate a PDF file of their salary history (multiple payslips)
+    \end{itemize}
+    \item Apply for Leave - Employees can submit leave applications through the web-application
+    \begin{itemize}
+        \item View Leave Applications - Employees can see their existing leave applications and its status 
+    \end{itemize}
+    \item Attendance Tracking - Employees can log their check-in/check-out time and see their attendance history
+\end{itemize}
+
+\renewcommand{\arraystretch}{1.3} % optional: better row spacing
+\begin{longtable}{|p{0.25\textwidth}|p{0.65\textwidth}|}
+\caption{Employee - Use Case Table} \label{tab:employee-usecase} \\
+\hline
+\textbf{Use Case Name} & \textbf{Description} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Use Case Name} & \textbf{Description} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+View Own Information & Employee accesses and views their personal information. \\
+\hline
+Update Own Information & Employee submits changes to their personal information. \\
+\hline
+View Salary Computation & Employee reviews their current salary details. \\
+\hline
+Generate Own Payslip & Employee generates a PDF of their payslip. \\
+\hline
+View Salary History & Employee views their complete salary history. \\
+\hline
+Generate Salary History & Employee generates a PDF of multiple payslips. \\
+\hline
+Apply for Leave & Employee submits a leave application. \\
+\hline
+View Leave Applications & Employee views the status of their leave applications. \\
+\hline
+Attendance Tracking & Employee logs their check-in/out time. \\
+\hline
+View Attendance History & Employee views their complete attendance history. \\
+\end{longtable}
+
+\subsection{\textbf{Entity Relationship Diagram}}
+
+Figure~\ref{fig:erd} illustrates the Entity Relationship Diagram of the database of the web application. The ERD defines the users and their relationship to entities and functionalites.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{ERD.png}
+    \caption{Entity Relationship Diagram}
+    \label{fig:erd}
+\end{figure}
+\subsection{\textbf{System Evaluation}}
+
+An article by Will T stated that Brooke’s SUS is one of the most used tools to assess usability performance of a website. Brooke’s SUS can assess aspects such as effectiveness, efficiency, and ease of use.
+
+Ten (10) employees of Hana-net Philippines Co. Inc. tested the web-application and were given a document containing the list of its functionalities. After testing, respondents were asked to answer a Google Forms SUS Questionnaire containing ten (10) statements about the web-application where each statement has to be ranked from 1 (strongly disagree) to 5 (strongly agree) based on how much they agree on the statement. The following statements were used to evaluate the web-application:
+    \begin{enumerate}
+        \item I think that I would like to use the web-app frequently
+        \item I found the web-app unnecessarily complex
+        \item I thought the web-app was easy to use
+        \item I think that I would need the support of a technical person to be able to use the web-app
+        \item I found the various functions in the web-app were well integrated
+        \item I thought there was too much inconsistency in the web-app
+        \item I would imagine that most people would learn to use the web-app very quickly
+        \item I found the web-app very inconvenient to use
+        \item I felt very confident using the web-app
+        \item I needed to learn a lot of things before I could get going with the web-app
+    \end{enumerate}
+Respondents also gave their comments and/or suggestions on what they would like to see and improve on the web-app.
+		
+		\section{RESULTS AND DISCUSSION}
+			\subsection{\textbf{Web-App Features and Functionalities}}
+\subsubsection{Admin Functionalities}
+The admin dashboard shown in Figure ~\ref{fig:ad-dash} shows total employee count, pending leave requests, and pending update requests. From the dashboard, admins can access quick action buttons for different functions including, managing users, leave requests, job titles, salary management, and attendance tracking.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{admin-dashboard.png}
+    \caption{Admin Dashboard}
+    \label{fig:ad-dash}
+\end{figure}
+
+A list of employees with their respective job titles can be seen in Figure ~\ref{fig:ed}. Employees can be sorted by Name or by Job Title. Each employee card has a trash icon button for removing employees from the database. When an employee card is clicked, a new tab will open displaying the selected employee's details. In this new tab, the admin can edit the employee's employment date and approve/decline a request to edit information made by the selected employee.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{admin-employeemgmt.png}
+        \caption{Employee Directory}
+        \label{fig:ed}
+    \end{figure}
+
+Job title management enables admins to create, modify, and delete position titles and re-assign users to different job titles. Admins can also view all employee users under a job title by clicking the title. Salary Management allows admins to view and modify detailed salary information for all employees. The interface allows the admin to view salary history and generate a PDF file report of all/a selected employee's salary report. (Figure ~\ref{fig:ad-slrymdl})
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{admin-salarymodal.png}
+    \caption{Salary Modal}
+    \label{fig:ad-slrymdl}
+\end{figure}
+
+Leave management shows a filterable view of all employees' leave requests where an admin can approve/decline the requests made by the employees. (Figure ~\ref{fig:ad-leavemgmt}). The interface organizes requests by status (All, Pending, Approved, Rejected) and displays information including employee email, name, leave type, dates, and duration.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{admin_leavemgmt.png}
+    \caption{Leave Management}
+    \label{fig:ad-leavemgmt}
+\end{figure}
+
+Attendance tracking allows admins to view and generate a PDF file of the detailed attendance of a selected employee for the selected month/year. (Figure ~\ref{fig:ad-attndncemdl})
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{admin-attendancemodal.png}
+    \caption{Attendance Tracking Modal}
+    \label{fig:ad-attndncemdl}
+\end{figure}
+
+\subsubsection{Employee Functionalities} 
+
+From the employee dashboard shown in Figure ~\ref{fig:emp-dash}, employees can access quick action buttons for different functions including, view personal information, view salary computation and history, apply for leave, and attendance tracking.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{emp-dashboard.png}
+    \caption{Employee Dashboard}
+    \label{fig:emp-dash}
+\end{figure}
+In Figure ~\ref{fig:emp-userinfo}, an employee can see his/her personal information, edit his/her information to be approved by an admin, and view his/her edit requests status.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{emp-info.png}
+    \caption{Employee Information }
+    \label{fig:emp-userinfo}
+\end{figure}
+In the salary computation page, an employee can view her salary computation details, including base salary, modifications (bonus/deductions made by the admin), and final salary. An employee can also generate a PDF file of his/her salary report. (Figure ~\ref{fig:salarypdf}). For the salary history, an employee user can view his/her past salaries by clicking on a date as seen on Figure ~\ref{fig:emp-salaryhistory}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{salarypdf.png}
+    \caption{Salary Report}
+    \label{fig:salarypdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{emp-salaryhstry.png}
+    \caption{Salary History}
+    \label{fig:emp-salaryhistory}
+\end{figure}
+Figure ~\ref{fig:emp-leaveapp} shows the Apply for Leave page, where an employee can see his/her leave applications and their status. An employee can also apply for leave by clicking the apply for leave button and filling up the form (Figure ~\ref{fig:emp-leavemodal}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{emp-leaveapp.png}
+    \caption{Leave Application}
+    \label{fig:emp-leaveapp}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{emp-leaveappmodal.png}
+    \caption{Leave Application Form}
+    \label{fig:emp-leavemodal}
+\end{figure}
+
+Employees can log their check-in/check-out time on the attendance tracking page (Figure ~\ref{fig:emp-attndnce1}). Employees can also view their attendance history on the same page (Figure ~\ref{fig:emp-attndnce2}).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{emp-attendance1.png}
+    \caption{Attendance - Day }
+
+        \label{fig:emp-attndnce1}
+\end{figure}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{emp-attendance2.png}
+        \caption{Attendance - Month}
+        \label{fig:emp-attndnce2}
+    \end{figure}
+
+\subsection{\textbf{System Usability Scale (SUS)}}
+The web-based application was evaluated using Brooke's System Usability Scale (SUS) with ten (10) employees of Hana-net Philippines Co. Inc. as respondents. After completing the SUS questionnaire consisting of ten statements ranked from 1 (strongly disagree) to 5 (strongly agree). The results revealed a mean SUS score of 76.75. Table III shows the score of each respondent.\\
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{3pt} 
+\begin{tabular}{|c |c |c |c |c |c |c |c |c |c |c |c|} \hline 
+Respondent & Q1 & Q2 & Q3 & Q4 & Q5 & Q6 & Q7 & Q8 & Q9 & Q10 & Score \\ \hline 
+1 & 4 & 4 & 3 & 4 & 3 & 3 & 4 & 4 & 4 & 4 & 92.5 \\ \hline 
+2 & 4 & 3 & 3 & 2 & 4 & 3 & 4 & 4 & 4 & 3 & 85 \\ \hline 
+3 & 4 & 3 & 3 & 2 & 4 & 3 & 3 & 2 & 4 & 2 & 75 \\ \hline 
+4 & 4 & 4 & 4 & 2 & 3 & 3 & 4 & 3 & 2 & 3 & 80 \\ \hline 
+5 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 50 \\ \hline 
+6 & 4 & 4 & 3 & 4 & 4 & 4 & 2 & 4 & 4 & 4 & 92.5 \\ \hline 
+7 & 4 & 4 & 4 & 4 & 4 & 3 & 4 & 4 & 4 & 4 & 97.5 \\ \hline 
+8 & 3 & 2 & 2 & 1 & 2 & 2 & 3 & 2 & 2 & 1 & 50 \\ \hline 
+9 & 3 & 2 & 4 & 1 & 3 & 2 & 4 & 4 & 3 & 1 & 67.5 \\ \hline 
+10 & 3 & 3 & 3 & 3 & 3 & 4 & 3 & 4 & 3 & 2 & 77.5 \\ \hline
+
+\end{tabular}
+\caption{SUS Results
+Mean Score: 76.75}
+\label{tab:my_table}
+\end{table}
+With an average score of 76.75, the web-based application can be described as above average in terms of usability, indicating that users found the system effective, efficient, and generally easy to use. The score suggests that the application successfully met the primary usability requirements and provided a positive user experience.
+
+In addition to the data gathered through the SUS questionnaire, respondents also provided feedback regarding improvements to the web application's user interface. These suggestions provide valuable insights for future iterations of the application. Implementing the changes could potentially increase the SUS score and overall user satisfaction.
+
+The positive SUS score aligns with the objectives of the study, particularly the aim to develop a user-friendly system that effectively centralizes employee information and streamline HR processes. The results also affirmed the move to transition from traditional data-keeping methods to a web-based information system.
+
+		
+		\section{SUMMARY AND CONCLUSION}
+			The development and implementation of the Web-based Employee Information System for Hana-net Philippines Co. Inc. Trucking Company addressed the limitations of the company's traditional data-keeping methods. The primary objective of this study were achieved by the deployment of: 
+\begin{enumerate}
+    \item A system enabling admins to organize, update, and manage employee information through a centralized database, reducing risks for human error and data inconsistency;
+    \item Features allowing admins to perform HR functions, particularly in attendance tracking and leave request management;
+    \item Functionality for employees to update their own information, review salary details, and file leave applications through a user-friendly interface;
+    \item A system that demonstrated good usability as shown by the System Usability Scale evaluation with a mean score of 76.75.
+\end{enumerate}
+
+The above-average score obtained using the SUS validates the effectiveness and usability of a tailored information system for small businesses like Hana-net.
+
+Moving forward, the system can be integrated to a scheduling app for drivers, enhance mobile functionality, and improve user-interface. 
+
+In conclusion, the Web-based Employee Information System has successfully transformed Hana-net's human resource management approach from traditional methods to a modernized, efficient, and user-friendly system that both administrators and employees find beneficial.
+		
+\section{\textbf{REFERENCES}}
+[1] Zeebaree, S. R. M., Shukur, H. M., & Hussan, B. K. (2019). Human resource management systems for enterprise organizations: A review. Periodicals of Engineering and Natural Sciences (PEN), 7(2), 660. https://doi.org/10.21533/pen.v7i2.428
+
+[2] Johnson, R. D., Lukaszewski, K. M., & Stone, D. L. (2016). The evolution of the field of human resource Information Systems: Co-Evolution of technology and HR processes. Communications of the Association for Information Systems, 38, 533–553. https://doi.org/10.17705/1cais.03828
+
+[3] Ali, K. S., Aamir, P. M., Buriro, A., Ahmed, A., Ahmed, K. S., Shoukat, H., Telecommunications, C., & It, R. Y. K. (2018). FGEHF: Authenticated Web-based Application for Human Resource Management System. Indian Journal of Science and Technology. https://doi.org/10.17485/ijst/2018/v11i43/131751
+
+[4] Thong, J. Y. (1999). An integrated model of information systems adoption in small businesses. Journal of Management Information Systems, 15(4), 187–214. https://doi.org/10.1080/07421222.1999.11518227
+
+[5] Vidgen, R. (2002). What's So Different about Developing Web Based Information Systems?. ECIS 2002 Proceedings, 154.
+
+[6] MacKenzie, K. (2023, October 2). What is HRIS? And why is it so important for your business? Recruiting Resources: How to Recruit and Hire Better. https://resources.workable.com/hr-toolkit/what-is-hris
+
+[7] T, W. (2021b, February 9). Measuring and Interpreting System Usability Scale (SUS). UIUX Trend. https://uiuxtrend.com/measuring-system-usability-scale-sus/
+
+\clearpage
+			
+	\end{mainmatter}
+\end{document}
